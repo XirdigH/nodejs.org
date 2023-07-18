@@ -72,6 +72,11 @@
     "vfile": "^5.3.7"
   },
   "devDependencies": {
+dependabot/npm_and_yarn/storybook-54701aaee0
+    "@storybook/addon-controls": "~7.1.0",
+    "@storybook/addon-interactions": "~7.1.0",
+    "@storybook/nextjs": "~7.1.0",
+
  snyk-fix-b79dd9ec71723ce4eff015a751ed9128
     "chokidar": "^3.5.2",
     "cross-env": "^7.0.3",
@@ -113,6 +118,7 @@ master
     "@storybook/addon-controls": "~7.0.26",
     "@storybook/addon-interactions": "~7.0.26",
     "@storybook/nextjs": "~7.0.26",
+master
     "@storybook/test-runner": "~0.11.0",
     "@storybook/testing-library": "~0.2.0",
     "@testing-library/jest-dom": "~5.17.0",
@@ -139,7 +145,7 @@ master
     "prettier": "3.0.0",
     "remark-preset-lint-node": "4.0.0",
     "remark-preset-prettier": "2.0.1",
-    "storybook": "~7.0.26",
+    "storybook": "~7.1.0",
     "stylelint": "15.10.1",
     "stylelint-config-recommended-scss": "12.0.0",
     "stylelint-config-standard": "34.0.0",
