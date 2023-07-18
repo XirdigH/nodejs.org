@@ -1,79 +1,104 @@
-# [nodejs.org](https://nodejs.org/)
+<p align="center">
+  <br />
+  <a href="https://nodejs.org">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./public/static/images/logos/nodejs-new-pantone-white.svg">
+      <img src="./public/static/images/logos/nodejs-new-pantone-black.svg" width="200px">
+    </picture>
+  </a>
+</p>
 
-[![Build Status](https://github.com/nodejs/nodejs.org/workflows/Tests/badge.svg)](https://github.com/nodejs/nodejs.org/actions?workflow=Tests)
-[![Dependency Status](https://img.shields.io/david/nodejs/nodejs.org.svg)](https://david-dm.org/nodejs/nodejs.org)
-[![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Crowdin](https://badges.crowdin.net/nodejs-website/localized.svg)](https://crowdin.com/project/nodejs-website)
+<p align="center">
+  <a href="https://nodejs.org">Node.js</a> Website built using Next.js with TypeScript, SCSS and MDXv2
+</p>
+
+<p align="center">
+  <a title="MIT License" href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" />
+  </a>
+  <a title="Localised" href="https://crowdin.com/project/nodejs-website">
+    <img src="https://badges.crowdin.net/nodejs-website/localized.svg" alt="Crowdin Badge" />
+  </a>
+  <a title="Vercel" href="https://vercel.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-white">
+      <img src="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-black" alt="Powered by Vercel">
+    </picture>
+  </a>
+
+  <br />
+
+  <img src="https://github.com/nodejs/nodejs.org/actions/workflows/build-and-analysis.yml/badge.svg" alt="Build and Analysis Checks" />
+
+  <br />
+  <br />
+</p>
 
 ## What is this repo?
 
-[nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
+[Nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) is the official website for the Node.js® JavaScript runtime. This repo is the source code for the website. It is built using [Next.js](https://nextjs.org), a React Framework.
 
-On a technical level, inspiration has been taken from the `iojs.org` repo while design and content has been migrated from the old [nodejs.org repo](https://github.com/nodejs/nodejs.org-archive). These technical changes have helped to facilitate community involvement and empower the foundation's internationalization communities to provide alternative website content in other languages.
+### Quick-Start Locally
 
-This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc).
+```bash
+npm ci
+npx turbo serve
+
+# listening at localhost:3000
+```
+
+### Structure of this Repository
+
+- Page templates are in `/layouts`
+- Global styles are in `/styles`
+- Public files are in `/public`
+- i18n configuration is on `i18n/config.json`
+- Global static files are in `/public/static`
+  - Legacy static files are in `/public/static/legacy`
+- All content is in `/pages`
+  - Initial development usually happens in English: `/pages/en`
+  - `/i18n/locales/{{locale}}.json` is where global localization information lives.
+  - All content is in Markdown and is per locale.
+  - The top of each Markdown file is a block of YAML (Frontmatter) for page-specific localization information passed to various templates.
+  - The bulk of the Markdown content for each page is referenced as `{children}` on their respective JSX Layout (`layouts/`)
 
 ## Contributing
 
-There are two ways to contribute to this project. The first is **submitting new features or fixing bugs** and the second is **translating content to other languages**.
+This project adopts the Node.js [Code of Conduct][].
 
-In both cases the workflow is different, please check how it is done in each case.
-
-### To submit a new feature or a bugfix
-
-Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
-
-```bash
-git clone https://github.com/<your user name>/nodejs.org.git
-cd nodejs.org
-npm install
-npm start
-```
-
-This will start the development server on `http://localhost:8080/en/`. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
-
-If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
+Any person who wants to contribute to the Website is welcome! Please read [Contribution Guidelines][] and see the [Figma Design][] to understand better the structure of this repository.
 
 ### To translate content into other languages
 
-If you want to help translate to other languages or improve existing translations, it isn't necessary to work from Github. You can and should do it through Crowdin, this is the correct workflow.
+If you want to help translate to other languages or improve existing translations, it is optional to work from GitHub. You can and should do it through Crowdin; this is the correct workflow.
 
-Crowdin is an online tool that facilitates the user experience for the translator, here is more information:
+Crowdin is an online tool that facilitates the user experience for the translator; here is more information:
 
 Website translations are handled via [Crowdin](https://crowdin.com/project/nodejs-website).
 
-To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
+To help with localization, please read the [Translation](TRANSLATION.md) guide.
 
-## Layout
+### Deployment
 
-* Page templates are in `/layouts`
-* Global styles are in `/layouts/css`
-* Global static files are in `/static`
-* All content is in `/locale`
-  * Initial development usually happens in English: `/locale/en`
-  * `/locale/{{locale}}/site.json` is where global localization information lives.
-  * All content is in Markdown and is per locale.
-  * The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
-  * The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
+Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standalone> minus secrets and certificates. The webhook is set up on GitHub for this project and talks to a small Node server on the host, which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
-## Serve/Build Options
+## Relevant Links
 
-* `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 status code if file is not present)
-* `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` builds the files present in the specified locale folder and adds the pages present in the English locale that are missing.
-* `npm run serve` builds all languages and returns 404 when a file is not present in the current locale
-* `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the English locale that are missing.
-* Multiple locales can be built by using comma separated values in the `DEFAULT_LOCALE` variable. i.e: `DEFAULT_LOCALE=en,es,it`
+[Code of Conduct][]
 
-## Deployment
+[Contribution Guidelines][]
 
-Full setup is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
+[Collaborator Guide][]
 
-## Content vs. Code
+[Figma Design][]
 
-The Website Working Group is primarily concerned with the code and overall structure of the website.
+[Content vs Code][]
 
-The content of the website comes from a variety of working groups (Evangelism, Core, i18n, etc).
-The Website WG defers to these WGs on matters of content and routinely adds collaborators from these
-working groups as they add and improve content on the website. In other words, the Website WG is not
-an *editorial* Working Group except when no other Working Group has taken responsibility for a
-content area.
+[Dependency Pinning][]
+
+[code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
+[contribution guidelines]: ./CONTRIBUTING.md
+[content vs code]: ./CONTENT_VS_CODE.md
+[dependency pinning]: ./DEPENDENCY_PINNING.md
+[collaborator guide]: ./COLLABORATOR_GUIDE.md
+[figma design]: https://www.figma.com/file/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=22%3A6086
