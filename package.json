@@ -72,12 +72,56 @@
     "vfile": "^5.3.7"
   },
   "devDependencies": {
+dependabot/npm_and_yarn/storybook-54701aaee0
     "@storybook/addon-controls": "~7.1.0",
     "@storybook/addon-interactions": "~7.1.0",
     "@storybook/nextjs": "~7.1.0",
+
+ snyk-fix-b79dd9ec71723ce4eff015a751ed9128
+    "chokidar": "^3.5.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-semistandard": "^16.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "lockfile-lint": "^4.6.2",
+    "nock": "^13.2.1",
+    "node-fetch": "^3.1.1",
+    "prettier": "^2.5.1",
+
+snyk-fix-4323eeb306a1585c618f5c463ab28483
+    "chokidar": "^3.4.3",
+    "cross-env": "^7.0.2",
+    "delay-cli": "^1.1.0",
+    "faucet": "0.0.1",
+    "linkinator": "^2.4.0",
+    "lockfile-lint": "^4.3.7",
+    "nock": "^13.0.5",
+    "node-fetch": "^2.6.1",
+master
+    "proxyquire": "^2.1.3",
+    "remark-cli": "^9.0.0",
+    "remark-frontmatter": "^3.0.0",
+    "remark-gfm": "^1.0.0",
+    "remark-preset-lint-node": "^2.0.0",
+    "st": "^2.0.0",
+    "standard": "^16.0.4",
+    "stylelint": "^13.8.0",
+    "stylelint-config-twbs-bootstrap": "^2.1.0",
+    "tape": "^5.0.1",
+    "vnu-jar": "20.6.30"
+
+    "@storybook/addon-controls": "~7.0.26",
+    "@storybook/addon-interactions": "~7.0.26",
+    "@storybook/nextjs": "~7.0.26",
+master
     "@storybook/test-runner": "~0.11.0",
     "@storybook/testing-library": "~0.2.0",
-    "@testing-library/jest-dom": "~5.16.5",
+    "@testing-library/jest-dom": "~5.17.0",
     "@testing-library/react": "~14.0.0",
     "@testing-library/user-event": "~14.4.3",
     "@types/jest": "29.5.2",
@@ -85,7 +129,7 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@types/semver": "^7.5.0",
-    "@types/testing-library__jest-dom": "5.14.7",
+    "@types/testing-library__jest-dom": "5.14.8",
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
     "concurrently": "8.2.0",
@@ -109,5 +153,6 @@
     "stylelint-selector-bem-pattern": "3.0.0",
     "user-agent-data-types": "0.3.1",
     "wait-on": "7.0.1"
+master
   }
 }
