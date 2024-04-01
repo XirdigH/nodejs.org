@@ -41,7 +41,7 @@ jobs:
             cache-
 
       - name: Set up Node.js
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
@@ -88,7 +88,7 @@ jobs:
             cache-
 
       - name: Set up Node.js
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
